@@ -13,54 +13,77 @@ class Scratch3YourExtension {
      */
     getInfo () {
         return {
-          // unique ID for your extension
-          id: 'kodebeta',
-      
-          // name displayed in the Scratch UI
-          name: 'kodebeta',      
-          // colours to use for your extension blocks
-          color1: '#000099',
-          color2: '#660066',
-      
-          // your Scratch blocks
-          blocks: [
+            // unique ID for your extension
+            id: 'yourScratchExtension',
+
+            // name that will be displayed in the Scratch UI
+            name: 'Testing',
+
+            // colours to use for your extension blocks
+            color1: '#800000',
+            color2: '#fff700',
+
+            // icons to display
+            //blockIconURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAAAAACyOJm3AAAAFklEQVQYV2P4DwMMEMgAI/+DEUIMBgAEWB7i7uidhAAAAABJRU5ErkJggg==',
+            //menuIconURI: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAAAAACyOJm3AAAAFklEQVQYV2P4DwMMEMgAI/+DEUIMBgAEWB7i7uidhAAAAABJRU5ErkJggg==',
+
+            // your Scratch blocks
+            blocks: [
               {
                 // function where your code logic lives
-                opcode: 'kodebeta',
+                opcode: 'assert',
         
+                // type of block
+                blockType: BlockType.BOOLEAN,
+        
+                // label to display on the block
+                text: 'assert [assert]',
+        
+                // arguments used in the block
+                arguments: {
+                  assert:{
+                    type: ArgumentType.BOOLEAN,
+                    defaultValue: false
+                  }
+                }
+              },
+              {
+                // function where your code logic lives
+                opcode: 'inspect',
+            
                 // type of block
                 blockType: BlockType.REPORTER,
         
                 // label to display on the block
-                text: 'kodebeta [kodebeta]',
+                text: 'inspect [inspect]',
         
                 // arguments used in the block
                 arguments: {
-                  kodebeta:{
-                    type: ArgumentType.NUMBER,
-                    defaultValue: 0
-                  }
+                    inspect:{
+                        type: ArgumentType.NUMBER,
+                        defaultValue: 0
+                    }
                 }
               }
-          ]
-         
+				
+            ]
         };
-      }
+    }
 
 
     /**
      * implementation of the block with the opcode that matches this name
      *  this will be called when the block is used
      */
-   
-    
-    kodebeta ({kodebeta}) {
+     assert ({assert}) {
       
-      return (kodebeta);
+      return (assert);
   }
- 
 
+  inspect ({inspect}) {
+      
+    return (inspect);
+}
 }
 
 module.exports = Scratch3YourExtension;
-
